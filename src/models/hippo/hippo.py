@@ -1,3 +1,4 @@
+"""HiPPO [High-order Polynomial Projection Operators] initialization"""
 import numpy as np
 import torch
 import torch.nn as nn
@@ -14,10 +15,10 @@ def transition(measure = 'legs', N=64, **kwargs):
         A: [N, N] transition matrix
         B: [N, 1] input matrix
     """
-    if (measure == 'legs'):
+    if measure == 'legs':
         return legs_matrix(N)
     else:
-        return None # measure is not implemented
+        return None
     
 def legs_matrix(N):
     """
